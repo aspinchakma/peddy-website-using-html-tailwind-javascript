@@ -7,3 +7,29 @@
   display: inline-block;
   cursor: pointer;
 }
+.category {
+  border: 1px solid rgba(14, 122, 129, 0.15);
+  border-radius: 16px;
+  cursor: pointer;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.category img {
+  width: 56px;
+  display: inline-block;
+}
+.category h3 {
+  font-size: 30px;
+  font-weight: bolder;
+  width: fit-content;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.selectedCategory {
+  border: 1.5px solid rgba(14, 122, 129, 1);
+  border-radius: 120px;
+  background: rgba(14, 122, 129, 0.1);
+}
