@@ -28,6 +28,7 @@ function showCategories(data) {
     categoriesContainer.appendChild(div);
   });
 }
+
 // Display All Data
 const allDataAPI = `https://openapi.programming-hero.com/api/peddy/pets`;
 selectedCategoryLoadData(allDataAPI, "pet_container");

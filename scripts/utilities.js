@@ -4,11 +4,17 @@ export function selectedCategory(data, selected) {
   }
   selected.classList.add("selectedCategory");
 }
-
+const loadingSpinner = document.getElementById("loading_spinner");
 export async function selectedCategoryLoadData(url, container) {
   try {
+    loadingSpinner.classList.remove("hidden");
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    console.log(url);
+    loadingSpinner.classList.add("hidden");
+
     const res = await fetch(url);
     const data = await res.json();
+
     if (data.pets === undefined) {
       showData(data.data, container);
       return;
