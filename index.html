@@ -32,6 +32,7 @@
         font-family: "Lato", sans-serif;
       }
     </style>
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
     <header>
@@ -58,7 +59,7 @@
               </div>
               <ul
                 tabindex="0"
-                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                class="menu menu-sm dropdown-content bg-base-100 lg:hidden rounded-box z-[1] mt-3 w-52 p-2 shadow"
               >
                 <li><a>Home</a></li>
                 <li><a>Shop</a></li>
@@ -77,11 +78,34 @@
               <li><a>Contact</a></li>
             </ul>
           </div>
-          <div class="w-auto border-2 border-gray-400 rounded-full p-2">
-            <i class="fa-regular fa-user text-xl"></i>
+          <div class="w-auto border-2 border-gray-400 rounded-[50%] p-2">
+            <i class="fa-regular fa-user text-sm"></i>
           </div>
         </div>
       </nav>
+
+      <!-- Hero Section -->
+      <section class="lg:w-2/4 mx-auto text-center my-4">
+        <h2 class="text-gray-600 text-xl font-bold">
+          Bringing Families Together ❤️‍🔥
+        </h2>
+        <h1 class="font-extrabold text-4xl lg:text-6xl my-6">
+          Your Path to Adoption Starts Here
+        </h1>
+        <p>
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum is that it has a.
+        </p>
+        <a class="px-6 py-3 view_more_button my-6">View More</a>
+        <img src="images/pet.webp" alt="" />
+        <h3 class="my-6 text-4xl font-extrabold">Adopt Your Best Friend</h3>
+        <p class="text-[#595959]">
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum is that it has a.
+        </p>
+      </section>
     </header>
     <!-- script -->
     <script type="module" src="scripts/script.js"></script>
