@@ -1,1 +1,2 @@
-console.log("Hello");
+import { name } from "../scripts/utilities.js";
+console.log(name);
