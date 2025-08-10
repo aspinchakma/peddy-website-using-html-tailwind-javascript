@@ -17,6 +17,15 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fontawesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <title>Peddy</title>
     <style>
       body {
@@ -25,7 +34,55 @@
     </style>
   </head>
   <body>
-    <h2>Aspin Chakma</h2>
+    <header>
+      <!-- Navigation bar -->
+      <nav class="lg:w-[85%] mx-auto">
+        <div class="navbar bg-base-100 justify-between">
+          <div class="navbar-start w-auto">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              >
+                <li><a>Home</a></li>
+                <li><a>Shop</a></li>
+                <li><a>Contact</a></li>
+              </ul>
+            </div>
+            <div class="flex gap-3">
+              <img class="w-10" src="/images/logo.webp" alt="" />
+              <h2 class="font-extrabold text-2xl">Peddy</h2>
+            </div>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+              <li><a>Home</a></li>
+              <li><a>Shop</a></li>
+              <li><a>Contact</a></li>
+            </ul>
+          </div>
+          <div class="w-auto border-2 border-gray-400 rounded-full p-2">
+            <i class="fa-regular fa-user text-xl"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
     <!-- script -->
     <script type="module" src="scripts/script.js"></script>
   </body>
