@@ -33,3 +33,31 @@
   border-radius: 120px;
   background: rgba(14, 122, 129, 0.1);
 }
+.pet {
+  border: 1px solid rgba(19, 19, 19, 0.1);
+  border-radius: 12px;
+}
+.card p {
+  font-size: 20px;
+  color: rgba(90, 90, 90, 1);
+}
+.details_button,
+.adopt,
+.like {
+  border: 1px solid rgba(14, 122, 129, 0.15);
+  border-radius: 8px;
+  color: #0e7a81;
+  font-weight: bold;
+  padding: 9px 18px;
+  font-size: 18px;
+}
+.details_button:hover,
+.adopt:hover {
+  background-color: #0e7a81;
+  color: white;
+  transition: 0.7s;
+}
+.like {
+  font-size: 24px;
+  width: fit-content;
+}
