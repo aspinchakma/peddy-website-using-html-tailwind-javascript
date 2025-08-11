@@ -97,7 +97,7 @@ function timerFunctionModal(adoptedButton) {
   console.log(timerText);
   let highestTime = Number(timerText.innerText) - 1;
   function updateCountdown() {
-    timerText.innerText = highestTime;
+    // timerText.innerText = highestTime;
     if (highestTime <= 0) {
       clearInterval(timer);
       // automatic close the modal
@@ -107,6 +107,7 @@ function timerFunctionModal(adoptedButton) {
       adoptedButton.classList.add("adopted");
       adoptedButton.innerText = "Adopted";
     } else {
+      timerText.innerText = highestTime;
       highestTime--;
     }
   }
