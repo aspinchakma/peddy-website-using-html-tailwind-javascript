@@ -1,6 +1,7 @@
 import {
   selectedCategory,
   selectedCategoryLoadData,
+  selectedPetPicture,
 } from "../scripts/utilities.js";
 const categoriesApi = `https://openapi.programming-hero.com/api/peddy/categories`;
 
@@ -51,3 +52,14 @@ categoriesContainer.addEventListener("click", (e) => {
 });
 
 loadCategories();
+
+// liked items
+document.getElementById("pet_container").addEventListener("click", (e) => {
+  if (e.target.classList.contains("like")) {
+    const srcLink =
+      e.target.parentNode.parentNode.parentNode.children[0].children[0].getAttribute(
+        "src"
+      );
+    selectedPetPicture(srcLink);
+  }
+});

@@ -58,7 +58,7 @@ function showData(data, container) {
                 }$</span>
               </p>
               <div class="card-actions flex justify-between mt-4">
-                <i class="fa-regular fa-thumbs-up like"></i>
+                <i class="fa-regular fa-thumbs-up like cursor-pointer"></i>
                 <button class="adopt">Adopt</button>
                 <button class="details_button">Details</button>
               </div>
@@ -76,3 +76,21 @@ document.getElementById("sort_by_price").addEventListener("click", () => {
   const sortedData = showingDataUI.sort((a, b) => b.price - a.price);
   showData(sortedData, "pet_container");
 });
+
+// like and selected image
+const dataArray = [];
+export function selectedPetPicture(data) {
+  // check data
+  if (dataArray.includes(data)) {
+    return;
+  } else {
+    dataArray.push(data);
+  }
+  // set data
+  const selectedContainer = document.getElementById("selectedPetContainer");
+  const img = document.createElement("img");
+  img.classList.add("mt-4");
+  img.classList.add("rounded-[10px]");
+  img.setAttribute("src", data);
+  selectedContainer.appendChild(img);
+}
