@@ -1,4 +1,5 @@
 import {
+  getDataUsingId,
   selectedCategory,
   selectedCategoryLoadData,
   selectedPetPicture,
@@ -61,5 +62,13 @@ document.getElementById("pet_container").addEventListener("click", (e) => {
         "src"
       );
     selectedPetPicture(srcLink);
+  }
+});
+
+document.getElementById("pet_container").addEventListener("click", (e) => {
+  if (e.target.classList.contains("details_button")) {
+    const itemId = e.target.parentNode.parentNode.parentNode.parentNode.id;
+    getDataUsingId(itemId);
+    my_modal_4.showModal();
   }
 });

@@ -27,13 +27,14 @@ function showData(data, container) {
   petContainer.innerHTML = "";
   data.forEach((pet) => {
     const div = document.createElement("div");
+    div.id = `${pet.petId}`;
     div.innerHTML = `
       <div class="card bg-base-100 w-full shadow-sm pet p-5">
             <figure>
               <img
                 src="${pet.image}"
                 alt="Shoes"
-                class="rounded-xl"
+                class="rounded-xl h-[200px] object-cover"
               />
             </figure>
             <div>
@@ -93,4 +94,19 @@ export function selectedPetPicture(data) {
   img.classList.add("rounded-[10px]");
   img.setAttribute("src", data);
   selectedContainer.appendChild(img);
+}
+// show data using id
+
+export async function getDataUsingId(id) {
+  try {
+    const res = await fetch(
+      `https://openapi.programming-hero.com/api/peddy/pet/${id}`
+    );
+    const data = await res.json();
+    showOnModal(data.petData);
+  } catch (error) {}
+}
+
+function showOnModal(data) {
+  console.log(data);
 }
