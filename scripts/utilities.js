@@ -54,7 +54,7 @@ function showData(data, container) {
               </p>
               <p>
                 <i class="fa-solid fa-dollar-sign"></i><span>Price : ${
-                  pet.price
+                  pet.price ? pet.price : "Surprise"
                 }$</span>
               </p>
               <div class="card-actions flex justify-between mt-4">
