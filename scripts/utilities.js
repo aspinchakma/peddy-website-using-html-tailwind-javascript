@@ -4,7 +4,7 @@ export function selectedCategory(data, selected) {
   }
   selected.classList.add("selectedCategory");
 }
-const loadingSpinner = document.getElementById("loading_spinner");
+
 export async function selectedCategoryLoadData(url, container) {
   try {
     const res = await fetch(url);
@@ -20,16 +20,32 @@ export async function selectedCategoryLoadData(url, container) {
 }
 export let showingDataUI = null;
 function showData(data, container) {
-  // accessing data for sorting
-  showingDataUI = data;
-  if (data.length !== 0 || data.length === undefined) {
-    const petContainer = document.getElementById(container);
-    petContainer.classList.add("grid");
-    petContainer.innerHTML = "";
-    data.forEach((pet) => {
-      const div = document.createElement("div");
-      div.id = `${pet.petId}`;
-      div.innerHTML = `
+  // spinner
+  // try to solve shaking problem or flicker problem
+  const petContainer = document.getElementById("pet_container");
+  petContainer.innerHTML = "";
+  petContainer.classList.remove("grid");
+  const div = document.createElement("div");
+  div.classList.add("pt-16");
+  div.classList.add("min-h-[200px]");
+  // div.classList.add("lg:py-24");
+  div.classList.add("text-center");
+  div.innerHTML = `
+  <span class="loading loading-bars loading-xl w-[100px]"></span>
+  `;
+  petContainer.appendChild(div);
+  setTimeout(() => {
+    // accessing data for sorting
+
+    showingDataUI = data;
+    if (data.length !== 0 || data.length === undefined) {
+      const petContainer = document.getElementById(container);
+      petContainer.classList.add("grid");
+      petContainer.innerHTML = "";
+      data.forEach((pet) => {
+        const div = document.createElement("div");
+        div.id = `${pet.petId}`;
+        div.innerHTML = `
       <div class="card bg-base-100 w-full shadow-sm pet p-5">
             <figure>
               <img
@@ -68,15 +84,15 @@ function showData(data, container) {
           </div>
       
       `;
-      petContainer.appendChild(div);
-    });
-  } else {
-    noData();
-  }
+        petContainer.appendChild(div);
+      });
+    } else {
+      noData();
+    }
+  }, 4000);
 }
 function noData() {
   const petContainer = document.getElementById("pet_container");
-  console.log("bal");
   petContainer.innerHTML = "";
   const div = document.createElement("div");
   div.classList.add("bg-gray-200");
