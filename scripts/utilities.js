@@ -18,8 +18,10 @@ export async function selectedCategoryLoadData(url, container) {
     showData(data.pets, container);
   } catch (error) {}
 }
-
+export let showingDataUI = null;
 function showData(data, container) {
+  // accessing data for sorting
+  showingDataUI = data;
   if (data.length !== 0 || data.length === undefined);
   const petContainer = document.getElementById(container);
   petContainer.innerHTML = "";
@@ -67,3 +69,10 @@ function showData(data, container) {
     petContainer.appendChild(div);
   });
 }
+
+// sort by price
+
+document.getElementById("sort_by_price").addEventListener("click", () => {
+  const sortedData = showingDataUI.sort((a, b) => b.price - a.price);
+  showData(sortedData, "pet_container");
+});

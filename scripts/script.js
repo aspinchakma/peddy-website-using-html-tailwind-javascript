@@ -41,13 +41,13 @@ categoriesContainer.addEventListener("click", (e) => {
   }
   const targetDiv = e.target.closest("div");
   const children = e.target.closest("div").parentNode.children;
-  console.log(e.target.closest("div").parentNode.children);
+  // console.log(e.target.closest("div").parentNode.children);
   selectedCategory(children, targetDiv);
 
   //  categorywise data
   const url = `https://openapi.programming-hero.com/api/peddy/category/${targetId}`;
   selectedCategoryLoadData(url, "pet_container");
-  console.log(url);
+  // console.log(url);
 });
 
 loadCategories();
