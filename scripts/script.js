@@ -93,6 +93,7 @@ document.getElementById("pet_container").addEventListener("click", (e) => {
 function timerFunctionModal(adoptedButton) {
   // Timer
   const timerText = document.getElementById("count_down_number");
+  timerText.innerText = "3";
   console.log(timerText);
   let highestTime = Number(timerText.innerText) - 1;
   function updateCountdown() {
@@ -105,7 +106,6 @@ function timerFunctionModal(adoptedButton) {
       // Adopted button change background color and update inner Text
       adoptedButton.classList.add("adopted");
       adoptedButton.innerText = "Adopted";
-      timerText.innerText = "3";
     } else {
       highestTime--;
     }

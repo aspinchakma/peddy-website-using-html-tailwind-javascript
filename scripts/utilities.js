@@ -22,13 +22,14 @@ export let showingDataUI = null;
 function showData(data, container) {
   // accessing data for sorting
   showingDataUI = data;
-  if (data.length !== 0 || data.length === undefined);
-  const petContainer = document.getElementById(container);
-  petContainer.innerHTML = "";
-  data.forEach((pet) => {
-    const div = document.createElement("div");
-    div.id = `${pet.petId}`;
-    div.innerHTML = `
+  if (data.length !== 0 || data.length === undefined) {
+    const petContainer = document.getElementById(container);
+    petContainer.classList.add("grid");
+    petContainer.innerHTML = "";
+    data.forEach((pet) => {
+      const div = document.createElement("div");
+      div.id = `${pet.petId}`;
+      div.innerHTML = `
       <div class="card bg-base-100 w-full shadow-sm pet p-5">
             <figure>
               <img
@@ -67,10 +68,40 @@ function showData(data, container) {
           </div>
       
       `;
-    petContainer.appendChild(div);
-  });
+      petContainer.appendChild(div);
+    });
+  } else {
+    noData();
+  }
 }
+function noData() {
+  const petContainer = document.getElementById("pet_container");
+  console.log("bal");
+  petContainer.innerHTML = "";
+  const div = document.createElement("div");
+  div.classList.add("bg-gray-200");
+  div.classList.add("rounded-lg");
+  div.classList.add("py-6");
+  div.classList.add("lg:py-16");
 
+  petContainer.classList.remove("grid");
+
+  div.innerHTML = `
+
+  <img src="images/error.webp" class="mx-auto" />
+        <h2 class="text-3xl font-extrabold text-center my-3">
+          No Information Available
+        </h2>
+        <p class="lg:max-w-[700px] text-center mx-auto">
+          We’re sorry, but the information you are looking for is currently
+          unavailable. This may be because the data has not been provided, is
+          under review, or is temporarily inaccessible. Please check back later
+          for updates. If you believe this is an error, contact our support team
+          for assistance.
+        </p>
+  `;
+  petContainer.appendChild(div);
+}
 // sort by price
 
 document.getElementById("sort_by_price").addEventListener("click", () => {
