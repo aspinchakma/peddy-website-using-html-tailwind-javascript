@@ -82,14 +82,34 @@ document.getElementById("closed_modal_button").addEventListener("click", () => {
 document.getElementById("pet_container").addEventListener("click", (e) => {
   console.log();
   if (e.target.classList.contains("adopt")) {
-    e.target.classList.add("adopted");
+    const adoptButton = e.target;
     if (e.target.innerText != "Adopted") {
       document.getElementById("Adopted").showModal();
+      timerFunctionModal(adoptButton);
     }
-    e.target.innerText = "Adopted";
   }
 });
 
-document.getElementById("count_down_button").addEventListener("click", (e) => {
-  document.getElementById("Adopted").close();
-});
+function timerFunctionModal(adoptedButton) {
+  // Timer
+  const timerText = document.getElementById("count_down_number");
+  console.log(timerText);
+  let highestTime = Number(timerText.innerText) - 1;
+  function updateCountdown() {
+    timerText.innerText = highestTime;
+    if (highestTime <= 0) {
+      clearInterval(timer);
+      // automatic close the modal
+      document.getElementById("Adopted").close();
+
+      // Adopted button change background color and update inner Text
+      adoptedButton.classList.add("adopted");
+      adoptedButton.innerText = "Adopted";
+      timerText.innerText = "3";
+    } else {
+      highestTime--;
+    }
+  }
+
+  const timer = setInterval(updateCountdown, 1000);
+}
