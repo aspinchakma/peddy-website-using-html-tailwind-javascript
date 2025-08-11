@@ -78,3 +78,18 @@ document.getElementById("closed_modal_button").addEventListener("click", () => {
   // Reset inner html on modal
   document.getElementById("modal_content_container").innerHTML = "";
 });
+// adopted button
+document.getElementById("pet_container").addEventListener("click", (e) => {
+  console.log();
+  if (e.target.classList.contains("adopt")) {
+    e.target.classList.add("adopted");
+    if (e.target.innerText != "Adopted") {
+      document.getElementById("Adopted").showModal();
+    }
+    e.target.innerText = "Adopted";
+  }
+});
+
+document.getElementById("count_down_button").addEventListener("click", (e) => {
+  document.getElementById("Adopted").close();
+});

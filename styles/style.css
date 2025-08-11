@@ -88,3 +88,14 @@
   color: white;
   border: 1px solid #0e7a81;
 }
+
+.adopted {
+  background-color: #9ca3af;
+  color: white;
+  cursor: not-allowed;
+  border: none;
+  opacity: 0.8;
+}
+.adopted:hover {
+  background-color: #9ca3af;
+}

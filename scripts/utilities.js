@@ -109,7 +109,6 @@ const modalContentContainer = document.getElementById(
   "modal_content_container"
 );
 function showOnModal(data) {
-  console.log(data);
   modalContentContainer.innerHTML = "";
   const divModalContent = document.createElement("div");
 
