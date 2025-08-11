@@ -90,7 +90,6 @@ export function selectedPetPicture(data) {
   // set data
   const selectedContainer = document.getElementById("selectedPetContainer");
   const img = document.createElement("img");
-  img.classList.add("mt-4");
   img.classList.add("rounded-[10px]");
   img.setAttribute("src", data);
   selectedContainer.appendChild(img);
@@ -106,16 +105,55 @@ export async function getDataUsingId(id) {
     showOnModal(data.petData);
   } catch (error) {}
 }
-
-const divModalContent = document.createElement("div");
-divModalContent.innerHTML = "";
+const modalContentContainer = document.getElementById(
+  "modal_content_container"
+);
 function showOnModal(data) {
   console.log(data);
-  const modalContentContainer = document.getElementById(
-    "modal_content_container"
-  );
+  modalContentContainer.innerHTML = "";
+  const divModalContent = document.createElement("div");
+
   divModalContent.innerHTML = `
-  <img src = "${data.image}" class="w-full"/>
+  <img src="${data.image}" class="w-full rounded-lg h-[250px] object-cover" />
+        <h2 class="card-title text-2xl my-1">${data.pet_name}</h2>
+        <div class="flex justify-between">
+          <div>
+            <p>
+              <i class="fa-solid fa-dna"></i
+              ><span>Breed: ${data.breed ? data.breed : "conceal"}</span>
+            </p>
+
+            <p>
+              <i class="fa-solid fa-mercury"></i>
+              <span>Gender: ${data.gender ? data.gender : "Surprise"}</span>
+            </p>
+            <p>
+              <i class="fa-solid fa-mercury"></i>
+              <span
+                >Vaccinated status: ${
+                  data.vaccinated_status ? data.vaccinated_status : "No"
+                }</span
+              >
+            </p>
+          </div>
+          <div>
+            <p>
+              <i class="fa-regular fa-calendar"></i>
+              <span
+                >Birth: ${
+                  data.date_of_birth ? data.date_of_birth : "Private"
+                }</span
+              >
+            </p>
+            <p>
+              <i class="fa-solid fa-dollar-sign"></i
+              ><span>Price : ${data.price ? data.price : "Surprise"}$</span>
+            </p>
+          </div>
+        </div>
+        <div class="divider my-2"></div>
+        <h3 class="text-xl font-bold mb-1">Details Information</h3>
+        <p>${data.pet_details}</p>
   `;
   modalContentContainer.appendChild(divModalContent);
 }

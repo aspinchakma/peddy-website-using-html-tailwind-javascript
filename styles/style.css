@@ -76,3 +76,15 @@
   font-weight: 600;
   color: white;
 }
+.modal_cancel_button {
+  border: 1px solid rgba(14, 122, 129, 0.2);
+  border-radius: 8px;
+  background: rgba(14, 122, 129, 0.1);
+  color: #0e7a81;
+  transition: background-color 0.8s;
+}
+.modal_cancel_button:hover {
+  background-color: #0e7a81;
+  color: white;
+  border: 1px solid #0e7a81;
+}

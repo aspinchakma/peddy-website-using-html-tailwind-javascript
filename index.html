@@ -127,19 +127,29 @@
         </button>
       </section>
       <!-- show data container -->
-      <section class="grid lg:grid-cols-5 my-5 gap-5">
+      <section class="grid lg:grid-cols-5 my-5 gap-3">
         <div
           id="pet_container"
           class="border-2 border-black col-span-4 grid lg:grid-cols-3 gap-5"
         ></div>
-        <div id="selectedPetContainer" class="col-span-1"></div>
+        <div class="col-span-1">
+          <div
+            id="selectedPetContainer"
+            class="grid lg:grid-cols-2 grid-cols-1 gap-2"
+          ></div>
+        </div>
       </section>
       <!-- Modal Section -->
       <section id="modal_container">
         <dialog id="my_modal_4" class="modal">
-          <div class="modal-box">
+          <div class="modal-box p-5">
             <div id="modal_content_container"></div>
-            <button class="btn" id="closed_modal_button">Close</button>
+            <button
+              class="btn modal_cancel_button w-full mt-4"
+              id="closed_modal_button"
+            >
+              Cancel
+            </button>
           </div>
         </dialog>
       </section>

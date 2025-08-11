@@ -76,6 +76,5 @@ document.getElementById("closed_modal_button").addEventListener("click", () => {
   my_modal_4.close();
 
   // Reset inner html on modal
-  const divModalContent = document.createElement("div");
-  divModalContent.innerHTML = "";
+  document.getElementById("modal_content_container").innerHTML = "";
 });
