@@ -72,3 +72,10 @@ document.getElementById("pet_container").addEventListener("click", (e) => {
     my_modal_4.showModal();
   }
 });
+document.getElementById("closed_modal_button").addEventListener("click", () => {
+  my_modal_4.close();
+
+  // Reset inner html on modal
+  const divModalContent = document.createElement("div");
+  divModalContent.innerHTML = "";
+});

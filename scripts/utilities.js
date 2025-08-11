@@ -107,6 +107,15 @@ export async function getDataUsingId(id) {
   } catch (error) {}
 }
 
+const divModalContent = document.createElement("div");
+divModalContent.innerHTML = "";
 function showOnModal(data) {
   console.log(data);
+  const modalContentContainer = document.getElementById(
+    "modal_content_container"
+  );
+  divModalContent.innerHTML = `
+  <img src = "${data.image}" class="w-full"/>
+  `;
+  modalContentContainer.appendChild(divModalContent);
 }
