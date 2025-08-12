@@ -53,4 +53,17 @@ Peddy is a pet adoption-themed website that allows users to explore available pe
 
 ---
 
+## Technology
+
+- **JavaScript (ES6+)** — for modern, clean, and modular scripting.
+- **HTML5 & CSS3** — for structuring and styling the web pages.
+- **Fetch API** — for asynchronous data fetching.
+- **Flexbox & CSS Grid** — for responsive and flexible layouts.
+- **DaisyUI / Tailwind CSS** — utility-first CSS framework.
+- **Font Awesome** — for icons.
+- **Modal dialogs** — native HTML `<dialog>` elements.
+- **API** — programming-hero.com open API for pet data.
+
+---
+
 **Click to visit [Peddy](https://peddyjavascriptapi.netlify.app/) Website**
