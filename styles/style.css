@@ -99,3 +99,20 @@
 .adopted:hover {
   background-color: #9ca3af;
 }
+.subscribe_button {
+  border-radius: 12px;
+  background: rgba(14, 122, 129, 1);
+  padding: 16px 32px 16px 32px;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+}
+.subscribed_email {
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.145);
+  padding: 15px 17px 15px 17px;
+  width: 100%;
+}
+.subscribed_email:focus {
+  outline: none;
+}

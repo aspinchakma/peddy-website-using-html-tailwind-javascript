@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <header>
+    <header class="w-[95%]">
       <!-- Navigation bar -->
       <nav class="lg:w-[85%] mx-auto">
         <div class="navbar bg-base-100 justify-between">
@@ -103,7 +103,7 @@
         <img src="images/pet.webp" alt="" />
       </section>
     </header>
-    <main class="lg:w-[85%] mx-auto">
+    <main class="lg:w-[85%] mx-auto w-[95%]">
       <!-- Adopt your bestfriend section -->
       <section>
         <div class="lg:w-2/4 text-center mx-auto">
@@ -116,7 +116,7 @@
         </div>
         <div
           id="pet_category_section"
-          class="mt-8 grid lg:grid-cols-4 gap-5"
+          class="mt-8 grid lg:grid-cols-4 gap-5 grid-cols-2"
         ></div>
       </section>
       <!-- sorting section -->
@@ -178,7 +178,58 @@
         </div>
       </dialog>
     </main>
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400">
+      <section
+        class="lg:w-[85%] mx-auto w-[95%] grid lg:grid-cols-3 py-10 lg:py-20 gap-4 lg:gap-20"
+      >
+        <div>
+          <div class="flex items-center">
+            <img src="images/logo.webp" alt="" />
+            <h3 class="text-2xl font-extrabold text-white">Peddy</h3>
+          </div>
+          <div>
+            <p class="mt-4">Location: av. Washington 165, NY CA</p>
+            <p>54003</p>
+            <p class="my-1">Phone: +31 85 964 47 25</p>
+            <p>Email: info@yourdomain.com</p>
+            <p class="mb-4 mt-1">Openings hours: 9.00 AM - 5.00 PM</p>
+            <div class="flex gap-3 items-center">
+              <a href=""
+                ><img class="w-6" src="/images/facebook.png" alt=""
+              /></a>
+              <a href=""
+                ><img class="w-6" src="/images/twitter.png" alt=""
+              /></a>
+              <a href=""
+                ><img class="w-6" src="/images/youtube.png" alt=""
+              /></a>
+              <a href=""><img class="w-6" src="/images/insta.png" alt="" /></a>
+            </div>
+          </div>
+        </div>
 
+        <!-- second column -->
+        <div>
+          <h2 class="text-white font-bold text-xl mb-3">Useful Links</h2>
+          <p><a href="">Home</a></p>
+          <p><a href="">About Us</a></p>
+          <p><a href="">Animals</a></p>
+          <p><a href="">Foundation</a></p>
+          <p><a href="">Contact</a></p>
+        </div>
+        <!-- Third Column -->
+        <div>
+          <h3 class="text-white font-bold text-xl mb-3">Drop a Message</h3>
+          <input
+            class="subscribed_email"
+            placeholder="Enter your email"
+            type="email"
+          />
+          <button class="subscribe_button mt-4">Subscribe</button>
+        </div>
+      </section>
+    </footer>
     <!-- script -->
     <script type="module" src="scripts/script.js"></script>
   </body>
